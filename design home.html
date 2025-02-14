@@ -1,0 +1,320 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Genius Designers</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&amp;display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', sans-serif;
+            scroll-behavior: smooth;
+        }
+        body {
+            background: #121212;
+            color: #eee;
+            line-height: 1.6;
+        }
+
+        /* Header */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            z-index: 1000;
+            background: rgba(0, 0, 0, 0.9);
+            padding: 10px 0;
+        }
+        .logo-container {
+            height: 60px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .logo-container img {
+            height: 50px;
+        }
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+            padding: 10px 0;
+        }
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: 500;
+            transition: 0.3s;
+        }
+        nav ul li a:hover {
+            color: #ff9800;
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            flex-direction: column;
+            position: relative;
+            overflow: hidden;
+            margin-top: 80px;
+            padding: 20px;
+        }
+        .hero video {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .hero::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.6);
+            z-index: 1;
+        }
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+        .hero h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            white-space: nowrap;
+            overflow: hidden;
+            border-right: 3px solid #ff9800;
+            width: 0;
+            animation: typing 3s steps(30, end) forwards, blink 0.7s infinite;
+        }
+        .hero p {
+            font-size: 1.2rem;
+            margin-top: 10px;
+            opacity: 0.9;
+        }
+        .hero .btn {
+            display: inline-block;
+            margin-top: 15px;
+            padding: 12px 25px;
+            font-size: 1rem;
+            font-weight: bold;
+            text-decoration: none;
+            color: #fff;
+            background: #ff9800;
+            border-radius: 5px;
+            transition: 0.3s;
+        }
+        .hero .btn:hover {
+            background: #e68900;
+        }
+
+        /* Typewriter animation */
+        @keyframes typing {
+            from { width: 0; }
+            to { width: 100%; }
+        }
+        @keyframes blink {
+            50% { border-color: transparent; }
+        }
+
+        /* About Section */
+        .about-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 70px 10%;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+        .about-text {
+            flex: 1;
+            min-width: 300px;
+        }
+        .about-text h2 {
+            font-size: 2.4rem;
+            color: #ff9800;
+        }
+        .about-text p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+        .about-image {
+            flex: 1;
+            min-width: 300px;
+        }
+        .about-image img {
+            width: 100%;
+            border-radius: 10px;
+        }
+
+        /* Branding Section */
+        .branding {
+            padding: 50px 10%;
+            text-align: center;
+            background: #181818;
+            border-radius: 10px;
+        }
+        .branding h2 {
+            font-size: 2rem;
+            color: #ff9800;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+        .branding p {
+            margin-bottom: 20px;
+            opacity: 0.8;
+        }
+        .branding-slideshow {
+            max-width: 600px;
+            margin: 0 auto;
+            position: relative;
+        }
+        .branding-slideshow img {
+            width: 100%;
+            height: auto;
+            display: none;
+            border-radius: 10px;
+        }
+        .branding-slideshow img.active {
+            display: block;
+        }
+
+        /* Testimonials */
+        .testimonials {
+            padding: 50px 10%;
+            background: #222;
+        }
+        .testimonials h2 {
+            text-align: center;
+            font-size: 2rem;
+            color: #ff9800;
+            margin-bottom: 20px;
+        }
+        .testimonial-slider {
+            display: flex;
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            gap: 20px;
+            padding: 20px;
+        }
+        .testimonial {
+            flex: 0 0 300px;
+            padding: 20px;
+            background: #333;
+            border-radius: 10px;
+            scroll-snap-align: start;
+            min-height: 150px;
+        }
+        .testimonial strong {
+            display: block;
+            color: #ff9800;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo-container">
+            <img src="https://i.postimg.cc/hvfQKL2m/GENIUS-designers-logo-with-white-pdf-20250211-122156-0000.png" alt="Genius Designers Logo">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#about">About Us</a></li>
+                <li><a href="#branding">Branding</a></li>
+                <li><a href="#testimonials">Testimonials</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="hero">
+        <video autoplay loop muted playsinline>
+            <source src="https://files.catbox.moe/bpdlb5.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <div class="hero-content">
+            <h1>Unleash Creativity</h1>
+            <p>Branding | UI/UX | Digital Art</p>
+            <a href="#contact" class="btn">Contact Us</a>
+        </div>
+    </div>
+
+    <section class="about-container" id="about">
+        <div class="about-text">
+            <h2>About Us</h2>
+            <p>We connect clients with top-tier designers, ensuring professionalism and quality in every project.</p>
+        </div>
+        <div class="about-image">
+            <img src="https://i.postimg.cc/N0zvSWnB/IMG-20250211-WA0030-1.jpg" alt="About Us">
+        </div>
+    </section>
+
+<script type="text/javascript" id="dcoder_script"><!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Genius Designers</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Branding Section -->
+    <section class="branding-section" id="branding">
+        <h2>Our Branding Approach</h2>
+        <div class="branding-content">
+            <div class="branding-text">
+                <p>At Genius Designers, we craft impactful brand identities that leave lasting impressions. Our team ensures your brand's story is told through visually compelling designs, strategic branding, and a creative approach.</p>
+                <ul>
+                    <li><strong>Logo & Identity Design</strong> – Unique and memorable brand marks.</li>
+                    <li><strong>Brand Strategy</strong> – Aligning your brand's vision with market needs.</li>
+                    <li><strong>Marketing Materials</strong> – Flyers, brochures, and business cards.</li>
+                    <li><strong>Social Media Branding</strong> – Cohesive visuals across platforms.</li>
+                    <li><strong>Packaging Design</strong> – Attractive and functional packaging.</li>
+                </ul>
+            </div>
+            <div class="branding-image">
+                <img src="https://i.postimg.cc/tC9vTcPr/branding-image.jpg" alt="Branding">
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonial Section -->
+    <section class="testimonials">
+        <h2>Client Reviews</h2>
+        <div class="testimonial-slider">
+            <div class="testimonial">
+                <p>⭐ <strong>Sarah D. - Marketing Manager</strong><br>"The designers understood our vision and delivered beyond expectations. Highly recommend!"</p>
+            </div>
+            <div class="testimonial">
+                <p>⭐ <strong>James W. - Startup Owner</strong><br>"I needed a standout logo and website—Genius Designers delivered exactly what I envisioned."</p>
+            </div>
+            <div class="testimonial">
+                <p>⭐ <strong>Emily R. - E-commerce Business Owner</strong><br>"The refund policy gave me peace of mind, and the design was perfect."</p>
+            </div>
+            <div class="testimonial">
+                <p>⭐ <strong>Carlos M. - Event Planner</strong><br>"Great process, great results! Our clients love the final design."</p>
+            </div>
+            <div class="testimonial">
+                <p>⭐ <strong>Laura T. - Small Business Owner</strong><br>"High-quality work with attention to detail. I’ll definitely use their services again."</p>
+            </div>
+        </div>
+    </section>
+
+    <script src="script.js"></script></body></html>
