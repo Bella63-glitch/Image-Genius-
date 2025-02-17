@@ -1,0 +1,253 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Branding Services - Image Genius</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet">
+    <style>
+      /* General Styles */
+      body {
+        font-family: 'Poppins', sans-serif;
+        margin: 0;
+        background-color: #f4f4f4;
+        color: #333;
+        line-height: 1.6;
+      }
+      a {
+        color: #ff6600;
+        text-decoration: none;
+      }
+      /* Header */
+      header {
+        background-color: #000;
+        padding: 20px 0;
+        text-align: center;
+      }
+      .header-content {
+        max-width: 960px;
+        margin: 0 auto;
+      }
+      header img {
+        width: 250px;
+        filter: brightness(1.2);
+      }
+      .tagline {
+        color: #ff6600;
+        font-size: 1.2em;
+        margin-top: 10px;
+      }
+      /* Hero Section (Slideshow) */
+      #hero {
+        position: relative;
+        overflow: hidden;
+        height: 500px;
+      }
+      .slideshow-container {
+        max-width: 100%;
+        height: 100%;
+        margin: 0 auto;
+        position: relative;
+      }
+      .slide {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        opacity: 0;
+        transition: opacity 1s ease-in-out;
+      }
+      .slide.active {
+        opacity: 1;
+      }
+      .slide img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+      .slide-caption {
+        position: absolute;
+        bottom: 20px;
+        left: 0;
+        width: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        color: white;
+        padding: 20px;
+        text-align: center;
+        font-size: 1.2em;
+      }
+      /* Sections */
+      section {
+        padding: 40px 0;
+        background-color: #fff;
+        text-align: center;
+      }
+      .container {
+        max-width: 960px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+      h2 {
+        color: #ff6600;
+        text-align: center;
+        margin-bottom: 20px;
+      }
+      p,
+      ul {
+        font-size: 16px;
+        line-height: 1.8;
+      }
+      ul {
+        list-style: none;
+        padding: 0;
+      }
+      ul li {
+        padding: 15px;
+        margin-bottom: 10px;
+        background-color: #f8f8f8;
+        border-radius: 5px;
+        box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+        transition: transform 0.2s ease-in-out, background-color 0.2s ease-in-out;
+      }
+      ul li:hover {
+        transform: translateY(-5px);
+        background-color: #ff6600;
+        color: white;
+      }
+      /* Video Section */
+      #promo-video video {
+        border: 5px solid #ff6600;
+        border-radius: 10px;
+      }
+      /* Call-to-Action Button */
+      .cta-button {
+        display: inline-block;
+        margin-top: 20px;
+        padding: 10px 20px;
+        background-color: #ff6600;
+        color: #fff;
+        text-decoration: none;
+        border-radius: 5px;
+        transition: background-color 0.3s ease;
+      }
+      .cta-button:hover {
+        background-color: #e55a00;
+      }
+      /* Footer */
+      footer {
+        background-color: #333;
+        color: #fff;
+        padding: 20px 0;
+        text-align: center;
+      }
+      /* Responsive Design */
+      @media (max-width: 768px) {
+        .container {
+          padding: 0 10px;
+        }
+        .slide-caption {
+          font-size: 1em;
+        }
+        #hero {
+          height: 300px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="header-content">
+        <img src="https://i.postimg.cc/sgXHZbfy/IMAGE-GENIUS-LOGO-black-pdf-20250216-162653-0000.png" alt="Image Genius Logo">
+        <div class="tagline">Your One-Stop Branding &amp; Advertising Solution</div>
+      </div>
+    </header>
+    <section id="hero">
+      <div class="slideshow-container">
+        <div class="slide active">
+          <img src="https://i.postimg.cc/qv1r7k5G/6896ea581cdaedf774c8c861cf46c314.jpg" alt="Graphic Design">
+          <div class="slide-caption">Graphic Design Excellence</div>
+        </div>
+        <div class="slide">
+          <img src="https://i.postimg.cc/cC0kY3Kt/6ddadc078f55392048c2678747023fe3.jpg" alt="Promotional Items">
+          <div class="slide-caption">Boost Your Brand with Promotional Items</div>
+        </div>
+        <div class="slide">
+          <img src="https://i.postimg.cc/jjj7WSdq/branding-mockup.jpg" alt="Branding Services">
+          <div class="slide-caption">Comprehensive Branding Solutions</div>
+        </div>
+      </div>
+    </section>
+    <section id="profile">
+      <div class="container">
+        <h2>About Us</h2>
+        <p><strong>Background:</strong> Image Genius was started to introduce affordable and effective print and advertising solutions, helping businesses showcase their products.</p>
+        <p><strong>Industry:</strong> Specializing in printing, signage, promotional items, and corporate branding.</p>
+        <p><strong>Location:</strong> Nairobi County, GMC Plaza, Ground Floor, Opposite Fire Station, Room D10.</p>
+        <a href="#services" class="cta-button">Explore Our Services</a>
+      </div>
+    </section>
+    <section id="promo-video">
+      <div class="container">
+        <h2>See Our Work in Action</h2>
+        <video width="100%" controls>
+          <source src="https://ia903200.us.archive.org/26/items/vid-20250216-wa-0014/VID-20250216-WA0014.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </div>
+    </section>
+    <section id="services">
+      <div class="container">
+        <h2>Our Services</h2>
+        <ul>
+          <li>Branding &amp; Promotional Materials</li>
+          <li>Product Labels &amp; Stickers</li>
+          <li>Calendars &amp; Diaries</li>
+          <li>Banners</li>
+          <li>Publications</li>
+          <li>Engraving</li>
+          <li>Brochures</li>
+          <li>Flyers</li>
+          <li>Posters</li>
+          <li>Business Cards</li>
+          <li>Signage (3D Signs, Illuminated Signs)</li>
+          <li>Invoice Books &amp; Folders</li>
+        </ul>
+        <a href="#contact" class="cta-button">Contact Us</a>
+      </div>
+    </section>
+    <section id="quality">
+      <div class="container">
+        <h2>Quality Assurance</h2>
+        <p>We maintain stringent quality control to ensure all products meet high standards, providing maximum customer satisfaction.</p>
+      </div>
+    </section>
+    <section id="vision-mission">
+      <div class="container">
+        <img src="https://i.postimg.cc/ZnXC4Z4Z/e0293c2b193859b97d6b290a27d7c74f.jpg" alt="Mission and Vision" style="display: block; margin: 0 auto 20px; border-radius: 50%; width: 150px; height: 150px; object-fit: cover;">
+        <h2>Our Vision &amp; Mission</h2>
+        <p><strong>Vision:</strong> To be the most preferred provider of branding and advertising solutions in Africa.</p>
+        <p><strong>Mission:</strong> To deliver effective advertising solutions that help businesses build strong brands.</p>
+        <p><strong>Goal:</strong> To become an all-in-one branding company serving the entire African region.</p>
+      </div>
+    </section>
+    <footer>
+      <p>© 2024 Image Genius. All Rights Reserved.</p>
+    </footer>
+    <script>
+      let slideIndex = 0;
+      const slides = document.getElementsByClassName("slide");
+      function showSlides() {
+        // Remove the "active" class from all slides
+        for (let i = 0; i < slides.length; i++) {
+          slides[i].classList.remove("active");
+        }
+        slideIndex++;
+        if (slideIndex > slides.length) { slideIndex = 1; }
+        slides[slideIndex - 1].classList.add("active");
+        setTimeout(showSlides, 3000);
+      }
+      showSlides();
+    </script>
+  
+</body></html>
