@@ -1,270 +1,358 @@
 <!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Genius Designers</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&amp;display=swap" rel="stylesheet">
+  <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', sans-serif;
+            scroll-behavior: smooth;
+        }
+        body {
+            background: #121212;
+            color: #eee;
+            line-height: 1.6;
+        }
+    /* Header */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            z-index: 1000;
+            background: rgba(0, 0, 0, 0.9);
+            padding: 10px 0;
+        }
+        .logo-container {
+            height: 60px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .logo-container img {
+            height: 50px;
+        }
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+            padding: 10px 0;
+        }
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: 500;
+            transition: 0.3s;
+            font-size: 0.9rem;
+        }
+        nav ul li a:hover {
+            color: #ff9800;
+        }
+    /* Mobile Navigation */
+        @media (max-width: 768px) {
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+                gap: 10px;
+            }
+        }
+    /* Hero Section */
+        .hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            flex-direction: column;
+            position: relative;
+            overflow: hidden;
+            margin-top: 80px;
+            padding: 20px;
+        }
+        .hero video {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .hero::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.6);
+            z-index: 1;
+        }
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+        .hero h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+        .hero p {
+            font-size: 1.2rem;
+            margin-top: 10px;
+            opacity: 0.9;
+        }
+        .hero .btn {
+            display: inline-block;
+            margin-top: 15px;
+            padding: 12px 25px;
+            font-size: 1rem;
+            font-weight: bold;
+            text-decoration: none;
+            color: #fff;
+            background: #ff9800;
+            border-radius: 5px;
+            transition: 0.3s;
+        }
+        .hero .btn:hover {
+            background: #e68900;
+        }
+    /* About Section */
+        .about-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 70px 10%;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+        .about-text {
+            flex: 1;
+            min-width: 300px;
+        }
+        .about-text h2 {
+            font-size: 2.4rem;
+            color: #ff9800;
+        }
+        .about-text p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+        .about-image {
+            flex: 1;
+            min-width: 300px;
+        }
+        .about-image img {
+            width: 100%;
+            border-radius: 10px;
+        }
+    /* Why Choose Us Section */
+        .why-choose-us {
+            padding: 50px 10%;
+            text-align: center;
+        }
+        .why-choose-us h2 {
+            font-size: 2.4rem;
+            color: #ff9800;
+            margin-bottom: 20px;
+        }
+        .tabs-container {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        .tab {
+            flex: 1 1 250px;
+            padding: 20px;
+            border: 2px solid #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+            background: rgba(0, 0, 0, 0.8);
+        }
+    /* Branding Section */
+        .branding-section {
+            text-align: center;
+            padding: 50px 10%;
+        }
+        .branding-section video {
+            width: 100%;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+        .branding-section h2 {
+            font-size: 2.4rem;
+            color: #ff9800;
+        }
+        .branding-section p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            margin-bottom: 20px;
+        }
+        .branding-section .btn {
+            display: inline-block;
+            padding: 12px 25px;
+            font-size: 1rem;
+            font-weight: bold;
+            text-decoration: none;
+            color: #fff;
+            background: #ff9800;
+            border-radius: 5px;
+            transition: 0.3s;
+        }
+        .branding-section .btn:hover {
+            background: #e68900;
+        }
+    /* Testimonials Section */
+        .testimonials-section {
+            padding: 30px 10%;
+            text-align: center;
+        }
+        .testimonials-section h2 {
+            font-size: 2rem;
+            color: #ff9800;
+            margin-bottom: 20px;
+        }
+        .testimonials-container {
+            display: flex;
+            gap: 20px;
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            padding-bottom: 20px;
+        }
+        .testimonial {
+            min-width: 280px;
+            max-width: 300px;
+            background: #ff9800;
+            border: 2px solid #fff;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+            scroll-snap-align: center;
+            flex: 0 0 auto;
+            color: #000;
+            animation: fadeInUp 1s ease-in-out;
+        }
+        .testimonial h3 {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+        }
+        .testimonial p {
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+        
+        @keyframes fadeInUp {
+          from {
+            opacity: 0;
+            transform: translateY(20px);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+  </style>
+ </head>
+ <body>
+  <header>
+   <div class="logo-container">
+    <img src="https://i.postimg.cc/hvfQKL2m/GENIUS-designers-logo-with-white-pdf-20250211-122156-0000.png" alt="Genius Designers Logo">
+   </div>
+   <nav>
+    <ul>
+     <li><a href="#about">About Us</a></li>
+     <li><a href="#designers">Designers</a></li>
+     <li><a href="#invest">Invest</a></li>
+     <li><a href="#branding">Branding</a></li>
+     <li><a href="#testimonials">Testimonials</a></li>
+     <!-- Updated Contact link -->
+     <li><a href="https://wa.me/254713431536" target="_blank">Contact</a></li>
+    </ul>
+   </nav>
+  </header>
+  <div class="hero">
+   <video autoplay loop muted playsinline>
+    <source src="https://ia600405.us.archive.org/29/items/pinterestdownloader.com-1739535229.596328/pinterestdownloader.com-1739535229.596328.mp4" type="video/mp4"> Your browser does not support the video tag.
+   </video>
+   <div class="hero-content">
+    <h1>Unleash Creativity</h1>
+    <p>Branding | UI/UX | Digital Art</p>
+    <!-- Updated Contact Us button -->
+    <a href="https://wa.me/254713431536" class="btn" target="_blank">Contact Us</a>
+   </div>
+  </div>
+  <section class="about-container" id="about">
+   <div class="about-text">
+    <h2>About Us</h2>
+    <p>We connect clients with top-tier designers, ensuring professionalism and quality in every project.</p>
+   </div>
+   <div class="about-image">
+    <img src="https://i.postimg.cc/N0zvSWnB/IMG-20250211-WA0030-1.jpg" alt="About Us">
+   </div>
+  </section>
+  <section class="why-choose-us">
+    <h2>Why Choose Us?</h2>
+    <div class="tabs-container">
+      <div class="tab">
+        <p>Satisfaction Guaranteed – No risk, only pay when you're happy.</p>
+      </div>
+      <div class="tab">
+        <p>Quality Talent – Vetted designers for top-notch results.</p>
+      </div>
+      <div class="tab">
+        <p>Smooth Process – Hassle-free collaboration from start to finish.</p>
+      </div>
+    </div>
+  </section>
+  <section class="branding-section" id="branding">
+   <video autoplay loop muted playsinline>
+    <source src="https://ia903200.us.archive.org/33/items/vid-20250215-wa-0048/VID-20250215-WA0048.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+   </video>
+   <h2>Branding Services</h2>
+   <p>We craft impactful brands that leave a lasting impression. Let's bring your vision to life.</p>
+   <a href="branding.html" class="btn">Learn More</a>
+  </section>
+  <section class="testimonials-section" id="testimonials">
+    <h2>Client Testimonials</h2>
+    <div class="testimonials-container">
+      <div class="testimonial">
+        <h3>Mwangi K. - Marketing Manager</h3>
+        <p>"Working with Genius Designers was a seamless experience. The designers understood our brand's vision from the very start and delivered a website that exceeded expectations. The entire process was easy, and knowing that payment was contingent upon satisfaction gave us confidence. Highly recommend!"</p>
+      </div>
+      <div class="testimonial">
+        <h3>Amina N. - Startup Owner</h3>
+        <p>"As a startup, I needed a logo and website design that would stand out in a competitive market. Genius Designers matched me with a designer who truly understood the essence of my business. The communication was great, and the quality of the final design was exceptional."</p>
+      </div>
+      <div class="testimonial">
+        <h3>David O. - E-commerce Business Owner</h3>
+        <p>"I was skeptical about online design services, but Genius Designers proved to be a game-changer. The designer I worked with was professional and responsive. When the final product arrived, it was exactly what I had imagined. Plus, the refund policy gave me peace of mind, which made the process risk-free."</p>
+      </div>
+      <div class="testimonial">
+        <h3>Jemima S. - Event Planner</h3>
+        <p>"The process was smooth, and the outcome was exactly what we needed. Genius Designers made sure that our feedback was heard and implemented. The final design was innovative, and our clients love it. It was a pleasure working with them."</p>
+      </div>
+      <div class="testimonial">
+        <h3>Kipkemoi L. - Small Business Owner</h3>
+        <p>"Genius Designers not only provided excellent service but also took the time to understand my business. The designer delivered high-quality work with attention to detail, and the process felt effortless. I'll definitely be using their services again in the future."</p>
+      </div>
+    </div>
+  </section>
+ </body>
+</html>
 
-<html lang="en">           
- <head>           
-  <meta charset="UTF-8">           
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">           
-  <title>Genius Designers</title>           
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&amp;display=swap" rel="stylesheet">           
-  <style>            
-        * {            
-            margin: 0;            
-            padding: 0;            
-            box-sizing: border-box;            
-            font-family: 'Inter', sans-serif;            
-            scroll-behavior: smooth;            
-        }            
-        body {            
-            background: #121212;            
-            color: #eee;            
-            line-height: 1.6;            
-        }    /* Header */            
-    header {            
-        position: fixed;            
-        top: 0;            
-        left: 0;            
-        width: 100%;            
-        display: flex;            
-        flex-direction: column;            
-        align-items: center;            
-        z-index: 1000;            
-        background: rgba(0, 0, 0, 0.9);            
-        padding: 10px 0;            
-    }            
-    .logo-container {            
-        height: 60px;            
-        display: flex;            
-        justify-content: center;            
-        align-items: center;            
-    }            
-    .logo-container img {            
-        height: 50px;            
-    }            
-    nav ul {            
-        list-style: none;            
-        display: flex;            
-        gap: 20px;            
-        padding: 10px 0;            
-    }            
-    nav ul li a {            
-        color: #fff;            
-        text-decoration: none;            
-        font-weight: 500;            
-        transition: 0.3s;            
-    }            
-    nav ul li a:hover {            
-        color: #ff9800;            
-    }      /* Mobile Navigation */            
-@media (max-width: 768px) {            
-    nav ul {            
-        flex-direction: column;            
-        align-items: center;            
-        gap: 10px;            
-    }            
-}        /* Hero Section */    
-.hero {    
-height: 100vh;    
-display: flex;    
-align-items: center;    
-justify-content: center;    
-text-align: center;    
-flex-direction: column;    
-position: relative;    
-overflow: hidden;    
-margin-top: 80px;    
-padding: 20px;    
-}    
-.hero video {    
-position: absolute;    
-top: 50%;    
-left: 50%;    
-transform: translate(-50%, -50%);    
-width: 100%;    
-height: 100%;    
-object-fit: cover;    
-}    
-.hero::before {    
-content: "";    
-position: absolute;    
-top: 0;    
-left: 0;    
-width: 100%;    
-height: 100%;    
-background: rgba(0, 0, 0, 0.6);    
-z-index: 1;    
-}    
-.hero-content {    
-position: relative;    
-z-index: 2;    
-}    
-.hero h1 {    
-font-size: 2.5rem;    
-font-weight: 700;    
-text-transform: uppercase;    
-}    
-.hero p {    
-font-size: 1.2rem;    
-margin-top: 10px;    
-opacity: 0.9;    
-}    
-.hero .btn {    
-display: inline-block;    
-margin-top: 15px;    
-padding: 12px 25px;    
-font-size: 1rem;    
-font-weight: bold;    
-text-decoration: none;    
-color: #fff;    
-background: #ff9800;    
-border-radius: 5px;    
-transition: 0.3s;    
-}    
-.hero .btn:hover {    
-background: #e68900;    
-}  /* About Section */  
-.about-container {  
-display: flex;  
-align-items: center;  
-justify-content: space-between;  
-padding: 70px 10%;  
-gap: 30px;  
-flex-wrap: wrap;  
-}  
-.about-text {  
-flex: 1;  
-min-width: 300px;  
-}  
-.about-text h2 {  
-font-size: 2.4rem;  
-color: #ff9800;  
-}  
-.about-text p {  
-font-size: 1.1rem;  
-opacity: 0.9;  
-}  
-.about-image {  
-flex: 1;  
-min-width: 300px;  
-}  
-.about-image img {  
-width: 100%;  
-border-radius: 10px;  
-}  /* Why Choose Us Section */
-.why-choose-us {
-padding: 50px 10%;
-text-align: center;
-}
-.why-choose-us h2 {
-font-size: 2.4rem;
-color: #ff9800;
-margin-bottom: 20px;
-}
-.tabs-container {
-display: flex;
-justify-content: space-around;
-flex-wrap: wrap;
-gap: 20px;
-}
-.tab {
-flex: 1 1 250px;
-padding: 20px;
-border: 2px solid #fff;
-border-radius: 10px;
-box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
-background: rgba(0, 0, 0, 0.8);
-}
 
-/* Branding Section */
-.branding-section {
-text-align: center;
-padding: 50px 10%;
-}
-.branding-section video {
-width: 100%;
-border-radius: 10px;
-margin-bottom: 20px;
-}
-.branding-section h2 {
-font-size: 2.4rem;
-color: #ff9800;
-}
-.branding-section p {
-font-size: 1.1rem;
-opacity: 0.9;
-margin-bottom: 20px;
-}
-.branding-section .btn {
-display: inline-block;
-padding: 12px 25px;
-font-size: 1rem;
-font-weight: bold;
-text-decoration: none;
-color: #fff;
-background: #ff9800;
-border-radius: 5px;
-transition: 0.3s;
-}
-.branding-section .btn:hover {
-background: #e68900;
-}
 
-  </style>           
- </head>           
- <body>           
-  <header>           
-   <div class="logo-container">           
-    <img src="https://i.postimg.cc/hvfQKL2m/GENIUS-designers-logo-with-white-pdf-20250211-122156-0000.png" alt="Genius Designers Logo">           
-   </div>           
-   <nav>           
-    <ul>           
-     <li><a href="#about">About Us</a></li>           
-     <li><a href="#branding">Branding</a></li>           
-     <li><a href="#testimonials">Testimonials</a></li>           
-     <li><a href="#contact">Contact</a></li>           
-    </ul>           
-   </nav>           
-  </header>           
-  <div class="hero">           
-   <video autoplay loop muted playsinline>           
-    <source src="https://ia600405.us.archive.org/29/items/pinterestdownloader.com-1739535229.596328/pinterestdownloader.com-1739535229.596328.mp4" type="video/mp4"> Your browser does not support the video tag.           
-   </video>           
-   <div class="hero-content">           
-    <h1>Unleash Creativity</h1>           
-    <p>Branding | UI/UX | Digital Art</p>           
-    <a href="#contact" class="btn">Contact Us</a>           
-   </div>           
-  </div>     <section class="about-container" id="about">           
-   <div class="about-text">           
-    <h2>About Us</h2>           
-    <p>We connect clients with top-tier designers, ensuring professionalism and quality in every project.</p>           
-   </div>           
-   <div class="about-image">           
-    <img src="https://i.postimg.cc/N0zvSWnB/IMG-20250211-WA0030-1.jpg" alt="About Us">           
-   </div>           
-  </section>    <section class="why-choose-us">          
-    <h2>Why Choose Us?</h2>          
-    <div class="tabs-container">          
-      <div class="tab">          
-        <p>Satisfaction Guaranteed – No risk, only pay when you're happy.</p>          
-      </div>          
-      <div class="tab">          
-        <p>Quality Talent – Vetted designers for top-notch results.</p>          
-      </div>          
-      <div class="tab">          
-        <p>Smooth Process – Hassle-free collaboration from start to finish.</p>          
-      </div>          
-    </div>          
-  </section>    <section class="branding-section" id="branding">           
-   <video autoplay loop muted playsinline>           
-    <source src="https://ia903200.us.archive.org/33/items/vid-20250215-wa-0048/VID-20250215-WA0048.mp4" type="video/mp4">           
-    Your browser does not support the video tag.           
-   </video>           
-   <h2>Branding Services</h2>           
-   <p>We craft impactful brands that leave a lasting impression. Let's bring your vision to life.</p>           
-   <a href="branding.html" class="btn">Learn More</a>           
-  </section>           
- </body>          
-</html>            
+    
 
 
 
