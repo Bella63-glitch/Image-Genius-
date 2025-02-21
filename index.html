@@ -16,7 +16,28 @@
       background-color: black;
       color: gold;
     }
-
+    /* Navigation Styles (Header) */
+    nav {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      z-index: 100;
+    }
+    nav a {
+      display: inline-block;
+      background-color: black;
+      color: white;
+      padding: 4px 8px;
+      margin: 0 5px;
+      text-decoration: none;
+      font-size: 10px; /* really small text */
+      border-radius: 3px;
+      transition: background-color 0.3s ease;
+    }
+    nav a:hover {
+      background-color: #333;
+    }
+    
     /* Animation Keyframes */
     @keyframes fadeInUp {
       from {
@@ -28,13 +49,11 @@
         transform: translateY(0);
       }
     }
-
     @keyframes moveText {
       0% { transform: translateX(0); }
       50% { transform: translateX(10px); }
       100% { transform: translateX(0); }
     }
-    
     /* Slide in from left */
     @keyframes slideInLeft {
       from {
@@ -46,7 +65,6 @@
         transform: translateX(0);
       }
     }
-
     /* Fade in */
     @keyframes fadeIn {
       from {
@@ -56,7 +74,6 @@
         opacity: 1;
       }
     }
-
     /* Utility classes for animations */
     .slide-in {
       animation: slideInLeft 1s ease-out forwards;
@@ -64,7 +81,7 @@
     .fade-in {
       animation: fadeIn 1s ease-out forwards;
     }
-
+    
     /* Logo Section */
     .logo-container {
       background-image: url('https://i.postimg.cc/D0JY6Dbb/IMG-20250219-WA0009-1.jpg');
@@ -76,7 +93,7 @@
       position: relative;
       height: 300px;
     }
-
+    
     /* Updated Subheading */
     .subheading {
       background-color: #FFD700;
@@ -92,7 +109,7 @@
       max-width: 90%;
       animation: fadeIn 1s ease-out forwards, moveText 3s ease-in-out infinite;
     }
-
+    
     /* Poster & Video Section */
     .poster-section {
       display: flex;
@@ -122,7 +139,7 @@
       display: block;
       animation: fadeIn 1s ease-out forwards;
     }
-
+    
     /* Testimonials Slideshow Section */
     .testimonials-wrapper {
       overflow: hidden;
@@ -162,7 +179,7 @@
       0% { transform: translateX(0); }
       100% { transform: translateX(-50%); }
     }
-
+    
     /* Footer */
     .footer {
       background: url('https://i.postimg.cc/T19WQp0H/078f1e4068e13b89a42162e02cb7a443.jpg');
@@ -200,7 +217,7 @@
       font-size: 1.3rem;
       text-decoration: none;
     }
-
+    
     /* Extra Footer Section */
     .extra-footer {
       background-image: url('https://i.postimg.cc/cLhjnS3x/a8fed86f8fbf66e9cab318bd4df345ce.jpg');
@@ -234,7 +251,21 @@
     .footer-column ul li {
       margin-bottom: 5px;
     }
-
+    /* Footer Navigation Links Styling with Animation */
+    .footer-column ul li a {
+      background-color: #fff;
+      color: #000;
+      padding: 5px 10px;
+      text-decoration: none;
+      border-radius: 5px;
+      display: inline-block;
+      transition: background-color 0.3s ease, transform 0.3s ease;
+    }
+    .footer-column ul li a:hover {
+      background-color: #FFD700;
+      transform: scale(1.05);
+    }
+    
     @media (max-width: 768px) {
       .poster-section {
         flex-direction: column;
@@ -251,7 +282,7 @@
         text-align: center;
       }
     }
-
+    
     @media (max-width: 480px) {
       .logo-container {
         height: 150px;
@@ -265,17 +296,23 @@
         font-size: 0.6rem;
       }
     }
+    
   </style>
 </head>
 <body>
+  <!-- Navigation Bar -->
+  <nav>
+    <a href="about.html">About Us</a>
+    <a href="branding.html">Branding</a>
+    <a href="https://chat.whatsapp.com/DJf2Q1V4L7k6AWdRkHl0Tq">Jobs</a>
+    <a href="contact.html">Contact Us</a>
+  </nav>
   <!-- LOGO Section -->
   <div class="logo-container slide-in"></div>
-
   <!-- Remote Designers Heading -->
   <div class="subheading fade-in">
     Remote Graphic & Web Designers ready to work for you
   </div>
-
   <!-- Poster & Video Section -->
   <div class="poster-section fade-in">
     <div class="poster-container">
@@ -283,59 +320,57 @@
     </div>
     <div class="video-container">
       <video autoplay loop muted playsinline controls>
-        <source src="https://ia601500.us.archive.org/15/items/vid-20250218-172803_20250218_1645/VID_20250218_172803.mp4" type="video/mp4">
+        <source src="https://ia800403.us.archive.org/1/items/lv_0_20250221193555_202502/lv_0_20250221193555.mp4" type="video/mp4">
         Your browser does not support the video tag.
       </video>
     </div>
   </div>
-
   <!-- Testimonials Section as Slideshow -->
   <div class="testimonials-wrapper fade-in">
     <div class="testimonials-inner">
       <div class="testimonial-box">
         <p>"The designers understood our vision and delivered beyond expectations. Highly recommend!"</p>
-        <div class="testimonial-name">Sarah Muthoni</div>
+        <div class="testimonial-name">JOSEPH KIVUVA</div>
       </div>
       <div class="testimonial-box">
         <p>"I needed a standout logo and website—Genius Designers delivered exactly what I envisioned."</p>
-        <div class="testimonial-name">James Kimani</div>
+        <div class="testimonial-name">CHRIS KIPTOO</div>
       </div>
       <div class="testimonial-box">
-        <p>"The refund policy gave me peace of mind, and the design was perfect."</p>
-        <div class="testimonial-name">Emily Wambui</div>
+        <p>"Their professionalism and attention to detail made our project a success."</p>
+        <div class="testimonial-name">DENIS WAFULA</div>
       </div>
       <div class="testimonial-box">
-        <p>"Great process, great results! Our clients love the final design."</p>
-        <div class="testimonial-name">Carlos Juma</div>
+        <p>"Innovative designs that set us apart in the market."</p>
+        <div class="testimonial-name">MICHAEL MWENDE</div>
       </div>
       <div class="testimonial-box">
-        <p>"High-quality work with attention to detail. I’ll definitely use their services again."</p>
-        <div class="testimonial-name">Laura Akinyi</div>
+        <p>"Exceptional service and high-quality work exceeded our expectations."</p>
+        <div class="testimonial-name">SAMUEL NKUNGU</div>
       </div>
       <!-- Duplicate testimonials for seamless looping -->
       <div class="testimonial-box">
         <p>"The designers understood our vision and delivered beyond expectations. Highly recommend!"</p>
-        <div class="testimonial-name">Sarah Muthoni</div>
+        <div class="testimonial-name">JOSEPH KIVUVA</div>
       </div>
       <div class="testimonial-box">
         <p>"I needed a standout logo and website—Genius Designers delivered exactly what I envisioned."</p>
-        <div class="testimonial-name">James Kimani</div>
+        <div class="testimonial-name">CHRIS KIPTOO</div>
       </div>
       <div class="testimonial-box">
-        <p>"The refund policy gave me peace of mind, and the design was perfect."</p>
-        <div class="testimonial-name">Emily Wambui</div>
+        <p>"Their professionalism and attention to detail made our project a success."</p>
+        <div class="testimonial-name">DENIS WAFULA</div>
       </div>
       <div class="testimonial-box">
-        <p>"Great process, great results! Our clients love the final design."</p>
-        <div class="testimonial-name">Carlos Juma</div>
+        <p>"Innovative designs that set us apart in the market."</p>
+        <div class="testimonial-name">MICHAEL MWENDE</div>
       </div>
       <div class="testimonial-box">
-        <p>"High-quality work with attention to detail. I’ll definitely use their services again."</p>
-        <div class="testimonial-name">Laura Akinyi</div>
+        <p>"Exceptional service and high-quality work exceeded our expectations."</p>
+        <div class="testimonial-name">SAMUEL NKUNGU</div>
       </div>
     </div>
   </div>
-
   <!-- Footer -->
   <div class="footer fade-in">
     <div class="footer-content">
@@ -361,7 +396,6 @@
       Copyright © 2024 Cloud9 Technologies. All rights reserved.
     </p>
   </div>
-
   <!-- Extra Footer Section -->
   <div class="extra-footer fade-in">
     <div class="footer-container">
@@ -396,14 +430,7 @@
     </div>
   </div>
 </body>
-        </html>
-
-
-
-
-
-
-    
+</html>
 
 
 
@@ -418,7 +445,14 @@
 
 
 
- 
-  
-  
 
+
+
+
+
+
+
+
+
+
+      
