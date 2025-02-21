@@ -1,356 +1,409 @@
-<!doctype html>
-<html lang="en">  
- <head>  
-  <meta charset="UTF-8">  
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">  
-  <title>Genius Designers</title>  
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&amp;display=swap" rel="stylesheet">  
-  <style>  
-        * {  
-            margin: 0;  
-            padding: 0;  
-            box-sizing: border-box;  
-            font-family: 'Inter', sans-serif;  
-            scroll-behavior: smooth;  
-        }  
-        body {  
-            background: #121212;  
-            color: #eee;  
-            line-height: 1.6;  
-        }  
-    /* Header */  
-        header {  
-            position: fixed;  
-            top: 0;  
-            left: 0;  
-            width: 100%;  
-            display: flex;  
-            flex-direction: column;  
-            align-items: center;  
-            z-index: 1000;  
-            background: rgba(0, 0, 0, 0.9);  
-            padding: 10px 0;  
-        }  
-        .logo-container {  
-            height: 60px;  
-            display: flex;  
-            justify-content: center;  
-            align-items: center;  
-        }  
-        .logo-container img {  
-            height: 50px;  
-        }  
-        nav ul {  
-            list-style: none;  
-            display: flex;  
-            gap: 20px;  
-            padding: 10px 0;  
-        }  
-        nav ul li a {  
-            color: #fff;  
-            text-decoration: none;  
-            font-weight: 500;  
-            transition: 0.3s;  
-            font-size: 0.9rem;  
-        }  
-        nav ul li a:hover {  
-            color: #ff9800;  
-        }  
-    /* Mobile Navigation */  
-        @media (max-width: 768px) {  
-            nav ul {  
-                flex-direction: column;  
-                align-items: center;  
-                gap: 10px;  
-            }  
-        }  
-    /* Hero Section */  
-        .hero {  
-            height: 100vh;  
-            display: flex;  
-            align-items: center;  
-            justify-content: center;  
-            text-align: center;  
-            flex-direction: column;  
-            position: relative;  
-            overflow: hidden;  
-            margin-top: 80px;  
-            padding: 20px;  
-        }  
-        .hero video {  
-            position: absolute;  
-            top: 50%;  
-            left: 50%;  
-            transform: translate(-50%, -50%);  
-            width: 100%;  
-            height: 100%;  
-            object-fit: cover;  
-        }  
-        .hero::before {  
-            content: "";  
-            position: absolute;  
-            top: 0;  
-            left: 0;  
-            width: 100%;  
-            height: 100%;  
-            background: rgba(0, 0, 0, 0.6);  
-            z-index: 1;  
-        }  
-        .hero-content {  
-            position: relative;  
-            z-index: 2;  
-        }  
-        .hero h1 {  
-            font-size: 2.5rem;  
-            font-weight: 700;  
-            text-transform: uppercase;  
-        }  
-        .hero p {  
-            font-size: 1.2rem;  
-            margin-top: 10px;  
-            opacity: 0.9;  
-        }  
-        .hero .btn {  
-            display: inline-block;  
-            margin-top: 15px;  
-            padding: 12px 25px;  
-            font-size: 1rem;  
-            font-weight: bold;  
-            text-decoration: none;  
-            color: #fff;  
-            background: #ff9800;  
-            border-radius: 5px;  
-            transition: 0.3s;  
-        }  
-        .hero .btn:hover {  
-            background: #e68900;  
-        }  
-    /* About Section */  
-        .about-container {  
-            display: flex;  
-            align-items: center;  
-            justify-content: space-between;  
-            padding: 70px 10%;  
-            gap: 30px;  
-            flex-wrap: wrap;  
-        }  
-        .about-text {  
-            flex: 1;  
-            min-width: 300px;  
-        }  
-        .about-text h2 {  
-            font-size: 2.4rem;  
-            color: #ff9800;  
-        }  
-        .about-text p {  
-            font-size: 1.1rem;  
-            opacity: 0.9;  
-        }  
-        .about-image {  
-            flex: 1;  
-            min-width: 300px;  
-        }  
-        .about-image img {  
-            width: 100%;  
-            border-radius: 10px;  
-        }  
-    /* Why Choose Us Section */  
-        .why-choose-us {  
-            padding: 50px 10%;  
-            text-align: center;  
-        }  
-        .why-choose-us h2 {  
-            font-size: 2.4rem;  
-            color: #ff9800;  
-            margin-bottom: 20px;  
-        }  
-        .tabs-container {  
-            display: flex;  
-            justify-content: space-around;  
-            flex-wrap: wrap;  
-            gap: 20px;  
-        }  
-        .tab {  
-            flex: 1 1 250px;  
-            padding: 20px;  
-            border: 2px solid #fff;  
-            border-radius: 10px;  
-            box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);  
-            background: rgba(0, 0, 0, 0.8);  
-        }  
-    /* Branding Section */  
-        .branding-section {  
-            text-align: center;  
-            padding: 50px 10%;  
-        }  
-        .branding-section video {  
-            width: 100%;  
-            border-radius: 10px;  
-            margin-bottom: 20px;  
-        }  
-        .branding-section h2 {  
-            font-size: 2.4rem;  
-            color: #ff9800;  
-        }  
-        .branding-section p {  
-            font-size: 1.1rem;  
-            opacity: 0.9;  
-            margin-bottom: 20px;  
-        }  
-        .branding-section .btn {  
-            display: inline-block;  
-            padding: 12px 25px;  
-            font-size: 1rem;  
-            font-weight: bold;  
-            text-decoration: none;  
-            color: #fff;  
-            background: #ff9800;  
-            border-radius: 5px;  
-            transition: 0.3s;  
-        }  
-        .branding-section .btn:hover {  
-            background: #e68900;  
-        }  
-    /* Testimonials Section */  
-        .testimonials-section {  
-            padding: 30px 10%;  
-            text-align: center;  
-        }  
-        .testimonials-section h2 {  
-            font-size: 2rem;  
-            color: #ff9800;  
-            margin-bottom: 20px;  
-        }  
-        .testimonials-container {  
-            display: flex;  
-            gap: 20px;  
-            overflow-x: auto;  
-            scroll-snap-type: x mandatory;  
-            padding-bottom: 20px;  
-        }  
-        .testimonial {  
-            min-width: 280px;  
-            max-width: 300px;  
-            background: #ff9800;  
-            border: 2px solid #fff;  
-            border-radius: 10px;  
-            padding: 20px;  
-            box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);  
-            scroll-snap-align: center;  
-            flex: 0 0 auto;  
-            color: #000;  
-            animation: fadeInUp 1s ease-in-out;  
-        }  
-        .testimonial h3 {  
-            font-size: 1.2rem;  
-            margin-bottom: 10px;  
-        }  
-        .testimonial p {  
-            font-size: 0.9rem;  
-            opacity: 0.9;  
-        }  
-        @keyframes fadeInUp {  
-          from {  
-            opacity: 0;  
-            transform: translateY(20px);  
-          }  
-          to {  
-            opacity: 1;  
-            transform: translateY(0);  
-          }  
-        }  
-  </style>  
- </head>  
- <body>  
-  <header>  
-   <div class="logo-container">  
-    <img src="https://i.postimg.cc/hvfQKL2m/GENIUS-designers-logo-with-white-pdf-20250211-122156-0000.png" alt="Genius Designers Logo">  
-   </div>  
-   <nav>  
-    <ul>  
-     <li><a href="#about">About Us</a></li>  
-     <!-- Link updated to the coming soon page -->  
-     <li><a href="coming soon.html">Designers</a></li>  
-     <!-- Link updated to the coming soon page -->  
-     <li><a href="coming soon.html">Invest</a></li>  
-     <li><a href="#branding">Branding</a></li>  
-     <li><a href="#testimonials">Testimonials</a></li>  
-     <li><a href="https://wa.me/254713431536" target="_blank">Contact</a></li>  
-    </ul>  
-   </nav>  
-  </header>  
-  <div class="hero">  
-   <video autoplay loop muted playsinline>  
-    <source src="https://ia600405.us.archive.org/29/items/pinterestdownloader.com-1739535229.596328/pinterestdownloader.com-1739535229.596328.mp4" type="video/mp4">  
-    Your browser does not support the video tag.  
-   </video>  
-   <div class="hero-content">  
-    <h1>Unleash Creativity</h1>  
-    <p>Branding | UI/UX | Digital Art</p>  
-    <!-- Updated Contact Us button -->  
-    <a href="https://wa.me/254713431536" class="btn" target="_blank">Contact Us</a>  
-   </div>  
-  </div>  
-  <section class="about-container" id="about">  
-   <div class="about-text">  
-    <h2>About Us</h2>  
-    <p>We connect clients with top-tier designers, ensuring professionalism and quality in every project.</p>  
-   </div>  
-   <div class="about-image">  
-    <img src="https://i.postimg.cc/N0zvSWnB/IMG-20250211-WA0030-1.jpg" alt="About Us">  
-   </div>  
-  </section>  
-  <section class="why-choose-us">  
-    <h2>Why Choose Us?</h2>  
-    <div class="tabs-container">  
-      <div class="tab">  
-        <p>Satisfaction Guaranteed – No risk, only pay when you're happy.</p>  
-      </div>  
-      <div class="tab">  
-        <p>Quality Talent – Vetted designers for top-notch results.</p>  
-      </div>  
-      <div class="tab">  
-        <p>Smooth Process – Hassle-free collaboration from start to finish.</p>  
-      </div>  
-    </div>  
-  </section>  
-  <section class="branding-section" id="branding">  
-   <video autoplay loop muted playsinline>  
-    <source src="https://ia903200.us.archive.org/33/items/vid-20250215-wa-0048/VID-20250215-WA0048.mp4" type="video/mp4">  
-    Your browser does not support the video tag.  
-   </video>  
-   <h2>Branding Services</h2>  
-   <p>We craft impactful brands that leave a lasting impression. Let's bring your vision to life.</p>  
-   <a href="branding.html" class="btn">Learn More</a>  
-  </section>  
-  <section class="testimonials-section" id="testimonials">  
-    <h2>Client Testimonials</h2>  
-    <div class="testimonials-container">  
-      <div class="testimonial">  
-        <h3>Mwangi K. - Marketing Manager</h3>  
-        <p>"Working with Genius Designers was a seamless experience. The designers understood our brand's vision from the very start and delivered a website that exceeded expectations. The entire process was easy, and knowing that payment was contingent upon satisfaction gave us confidence. Highly recommend!"</p>  
-      </div>  
-      <div class="testimonial">  
-        <h3>Amina N. - Startup Owner</h3>  
-        <p>"As a startup, I needed a logo and website design that would stand out in a competitive market. Genius Designers matched me with a designer who truly understood the essence of my business. The communication was great, and the quality of the final design was exceptional."</p>  
-      </div>  
-      <div class="testimonial">  
-        <h3>David O. - E-commerce Business Owner</h3>  
-        <p>"I was skeptical about online design services, but Genius Designers proved to be a game-changer. The designer I worked with was professional and responsive. When the final product arrived, it was exactly what I had imagined. Plus, the refund policy gave me peace of mind, which made the process risk-free."</p>  
-      </div>  
-      <div class="testimonial">  
-        <h3>Jemima S. - Event Planner</h3>  
-        <p>"The process was smooth, and the outcome was exactly what we needed. Genius Designers made sure that our feedback was heard and implemented. The final design was innovative, and our clients love it. It was a pleasure working with them."</p>  
-      </div>  
-      <div class="testimonial">  
-        <h3>Kipkemoi L. - Small Business Owner</h3>  
-        <p>"Genius Designers not only provided excellent service but also took the time to understand my business. The designer delivered high-quality work with attention to detail, and the process felt effortless. I'll definitely be using their services again in the future."</p>  
-      </div>  
-    </div>  
-  </section>  
- </body>  
-</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Remote Designers</title>
+  <style>
+    /* Global Styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+    body {
+      background-color: black;
+      color: gold;
+    }
 
+    /* Animation Keyframes */
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes moveText {
+      0% { transform: translateX(0); }
+      50% { transform: translateX(10px); }
+      100% { transform: translateX(0); }
+    }
+    
+    /* New animation: Slide in from left */
+    @keyframes slideInLeft {
+      from {
+        opacity: 0;
+        transform: translateX(-100%);
+      }
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+
+    /* New animation: Fade in */
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+
+    /* Utility classes for animations */
+    .slide-in {
+      animation: slideInLeft 1s ease-out forwards;
+    }
+    .fade-in {
+      animation: fadeIn 1s ease-out forwards;
+    }
+
+    /* Logo Section */
+    .logo-container {
+      background-image: url('https://i.postimg.cc/D0JY6Dbb/IMG-20250219-WA0009-1.jpg');
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center;
+      text-align: center;
+      padding: 2rem;
+      position: relative;
+      height: 300px;
+    }
+
+    /* Updated Subheading: Golden background, black text, raised effect with shadow */
+    .subheading {
+      background-color: #FFD700; /* Golden background */
+      color: #000; /* Black text */
+      text-align: center;
+      font-size: 1.2rem;
+      padding: 15px;
+      font-weight: bold;
+      border-radius: 8px;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.7); /* Raised effect */
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* HD shadow effect */
+      margin: 20px auto;
+      max-width: 90%;
+      /* Fade in then continuously move the text */
+      animation: fadeIn 1s ease-out forwards, moveText 3s ease-in-out infinite;
+    }
+
+    /* Poster & Video Section */
+    .poster-section {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+      gap: 20px;
+    }
+    .poster-container,
+    .video-container {
+      flex: 1;
+      max-width: 500px;
+      height: 300px;
+    }
+    .poster-container img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      /* Slide in the poster image from the left */
+      animation: slideInLeft 1s ease-out forwards;
+    }
+    .video-container video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      /* Fade in the video container */
+      animation: fadeIn 1s ease-out forwards;
+    }
+
+    /* Testimonials Slideshow Section */
+    .testimonials-wrapper {
+      overflow: hidden;
+      padding: 20px;
+      position: relative;
+    }
+    .testimonials-inner {
+      display: flex;
+      gap: 10px;
+      animation: scrollTestimonials 20s linear infinite;
+    }
+    .testimonial-box {
+      background-color: gold;
+      color: black;
+      padding: 10px;
+      text-align: center;
+      font-size: 0.7rem;
+      font-weight: bold;
+      width: 180px;
+      height: 180px;
+      flex: 0 0 auto;
+      border-radius: 10px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+    .testimonial-box p {
+      font-style: italic;
+      margin-top: 5px;
+    }
+    .testimonial-name {
+      font-weight: bold;
+      margin-top: 5px;
+    }
+    @keyframes scrollTestimonials {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+
+    /* Footer */
+    .footer {
+      background: url('https://i.postimg.cc/T19WQp0H/078f1e4068e13b89a42162e02cb7a443.jpg');
+      background-size: cover;
+      background-repeat: no-repeat;
+      color: white;
+      padding: 10px;
+      font-size: 0.7rem;
+      text-align: center;
+      border-radius: 10px;
+    }
+    .footer-content {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 20px;
+      align-items: center;
+    }
+    .footer-box {
+      flex: 1;
+      min-width: 200px;
+    }
+    .footer-box h3 {
+      margin-bottom: 10px;
+      font-size: 1rem;
+    }
+    .social-icons {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      margin-top: 10px;
+    }
+    .social-icons a {
+      color: white;
+      font-size: 1.3rem;
+      text-decoration: none;
+    }
+
+    /* Mail Us Section - reduced font size */
+    .mail-us {
+      font-size: 0.6rem;
+    }
+
+    /* Extra Footer Section */
+    .extra-footer {
+      background-image: url('https://i.postimg.cc/cLhjnS3x/a8fed86f8fbf66e9cab318bd4df345ce.jpg');
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+      color: white;
+      padding: 20px;
+      font-size: 0.7rem;
+      border-radius: 10px;
+    }
+    .footer-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 20px;
+    }
+    .footer-column {
+      flex: 1;
+      min-width: 150px;
+    }
+    .footer-column h4 {
+      margin-bottom: 10px;
+      font-size: 0.9rem;
+    }
+    .footer-column ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .footer-column ul li {
+      margin-bottom: 5px;
+    }
+
+    @media (max-width: 768px) {
+      .poster-section {
+        flex-direction: column;
+      }
+      .poster-container,
+      .video-container {
+        max-width: 100%;
+      }
+      .logo-container {
+        height: 200px;
+      }
+      .footer-content {
+        flex-direction: column;
+        text-align: center;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .logo-container {
+        height: 150px;
+      }
+      .subheading {
+        font-size: 1rem;
+      }
+      .testimonial-box {
+        width: 150px;
+        height: 150px;
+        font-size: 0.6rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- LOGO Section -->
+  <div class="logo-container slide-in"></div>
+
+  <!-- Remote Designers Heading with Updated Style -->
+  <div class="subheading fade-in">
+    Remote Graphic & Web Designers ready to work for you
+  </div>
+
+  <!-- Poster & Video Section -->
+  <div class="poster-section fade-in">
+    <div class="poster-container">
+      <img src="https://i.postimg.cc/02QhdkWT/IMG-20250218-WA0031-1.jpg" alt="Poster Image">
+    </div>
+    <div class="video-container">
+      <video autoplay loop muted>
+        <source src="https://ia601500.us.archive.org/15/items/vid-20250218-172803_20250218_1645/VID_20250218_172803.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+    </div>
+  </div>
+
+  <!-- Testimonials Section as Slideshow -->
+  <div class="testimonials-wrapper fade-in">
+    <div class="testimonials-inner">
+      <div class="testimonial-box">
+        <p>"The designers understood our vision and delivered beyond expectations. Highly recommend!"</p>
+        <div class="testimonial-name">Sarah Muthoni</div>
+      </div>
+      <div class="testimonial-box">
+        <p>"I needed a standout logo and website—Genius Designers delivered exactly what I envisioned."</p>
+        <div class="testimonial-name">James Kimani</div>
+      </div>
+      <div class="testimonial-box">
+        <p>"The refund policy gave me peace of mind, and the design was perfect."</p>
+        <div class="testimonial-name">Emily Wambui</div>
+      </div>
+      <div class="testimonial-box">
+        <p>"Great process, great results! Our clients love the final design."</p>
+        <div class="testimonial-name">Carlos Juma</div>
+      </div>
+      <div class="testimonial-box">
+        <p>"High-quality work with attention to detail. I’ll definitely use their services again."</p>
+        <div class="testimonial-name">Laura Akinyi</div>
+      </div>
+      <!-- Duplicate testimonials for seamless looping -->
+      <div class="testimonial-box">
+        <p>"The designers understood our vision and delivered beyond expectations. Highly recommend!"</p>
+        <div class="testimonial-name">Sarah Muthoni</div>
+      </div>
+      <div class="testimonial-box">
+        <p>"I needed a standout logo and website—Genius Designers delivered exactly what I envisioned."</p>
+        <div class="testimonial-name">James Kimani</div>
+      </div>
+      <div class="testimonial-box">
+        <p>"The refund policy gave me peace of mind, and the design was perfect."</p>
+        <div class="testimonial-name">Emily Wambui</div>
+      </div>
+      <div class="testimonial-box">
+        <p>"Great process, great results! Our clients love the final design."</p>
+        <div class="testimonial-name">Carlos Juma</div>
+      </div>
+      <div class="testimonial-box">
+        <p>"High-quality work with attention to detail. I’ll definitely use their services again."</p>
+        <div class="testimonial-name">Laura Akinyi</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <div class="footer fade-in">
+    <div class="footer-content">
+      <div class="footer-box">
+        <h3>Call Us</h3>
+        <p>Support: +91 9898 12344</p>
+        <p>Sales: +91 9876 87925</p>
+      </div>
+      <div class="footer-box mail-us">
+        <h3>Mail Us</h3>
+        <p>info@cloud9tech.com</p>
+      </div>
+      <div class="footer-box">
+        <h3>Follow Us</h3>
+        <div class="social-icons">
+          <a href="#">🔵</a>
+          <a href="#">🟢</a>
+          <a href="#">🔴</a>
+        </div>
+      </div>
+    </div>
+    <p style="margin-top: 20px;">
+      Copyright © 2024 Cloud9 Technologies. All rights reserved.
+    </p>
+  </div>
+
+  <!-- Extra Footer Section -->
+  <div class="extra-footer fade-in">
+    <div class="footer-container">
+      <div class="footer-column">
+        <h4>About Us</h4>
+        <p>We connect clients with top-tier designers, ensuring professionalism and quality in every project.</p>
+      </div>
+      <div class="footer-column">
+        <h4>Product & Services</h4>
+        <ul>
+          <li>Logo & Branding</li>
+          <li>Digital & UI/UX Design</li>
+          <li>Motion Graphics</li>
+          <li>Photo Editing</li>
+        </ul>
+      </div>
+      <div class="footer-column">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="branding.html">Branding</a></li>
+          <li><a href="coming-soon.html">Invest</a></li>
+          <li><a href="coming-soon.html">Designers</a></li>
+        </ul>
+      </div>
+      <div class="footer-column">
+        <h4>Payment Details</h4>
+        <ul>
+          <li>Lipa Na Mpesa</li>
+          <li>Buy Goods Till Number: 4967376</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</body>
+</html>  
 
 
 
