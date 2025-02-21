@@ -1,376 +1,386 @@
 <!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Image Genius - Branding Services</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <!-- Poppins for body text and Pacifico for headings -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Pacifico&display=swap" rel="stylesheet">
-    <style>
-      /* Reset */
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
+<html lang="en">  
+  <head>  
+    <meta charset="UTF-8">  
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+    <title>Image Genius - Branding Services</title>  
+    <link rel="preconnect" href="https://fonts.googleapis.com">  
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>  
+    <!-- Poppins for body text and Pacifico for headings -->  
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Pacifico&display=swap" rel="stylesheet">  
+    <style>  
+      /* Reset */  
+      * {  
+        margin: 0;  
+        padding: 0;  
+        box-sizing: border-box;  
+      }  
+      body {  
+        font-family: 'Poppins', sans-serif;  
+        background-color: #fff;  
+        color: #000;  
+        line-height: 1.6;  
+      }  
+      a {  
+        text-decoration: none;  
+        color: #FF6600; /* Orange */  
+      }  
+
+      /* Header */  
+      header {  
+        background-color: #000; /* Black */  
+        padding: 20px 0;  
+        text-align: center;  
+        position: relative;  
+      }  
+      .header-content {  
+        max-width: 1200px;  
+        margin: 0 auto;  
+        padding: 0 20px;  
+        position: relative;  
+        z-index: 1;  
+      }  
+      header img {  
+        width: 200px;  
+        filter: brightness(1.2);  
+      }  
+      .tagline {  
+        color: #D4AF37; /* Gold */  
+        font-size: 1.4em;  
+        margin-top: 10px;  
+        font-family: 'Pacifico', cursive;  
+      }  
+
+      /* Hero Section */  
+      #hero {  
+        position: relative;  
+        overflow: hidden;  
+        height: 600px;  
+      }  
+      .slideshow-container {  
+        width: 100%;  
+        height: 100%;  
+        position: relative;  
+      }  
+      .slide {  
+        position: absolute;  
+        width: 100%;  
+        height: 100%;  
+        opacity: 0;  
+        transition: opacity 1s ease-in-out;  
+      }  
+      .slide.active {  
+        opacity: 1;  
+      }  
+      .slide img {  
+        width: 100%;  
+        height: 100%;  
+        object-fit: cover;  
+      }  
+      .slide-caption {  
+        position: absolute;  
+        bottom: 40px;  
+        left: 50%;  
+        transform: translateX(-50%);  
+        background: rgba(0, 0, 0, 0.6);  
+        padding: 20px 40px;  
+        border-radius: 50px;  
+        font-family: 'Pacifico', cursive;  
+        font-size: 2em;  
+        color: #D4AF37; /* Gold */  
+        text-shadow: 1px 1px 4px rgba(0,0,0,0.7);  
+      }  
+
+      /* Animations */  
+      @keyframes fadeInUp {  
+        from {  
+          opacity: 0;  
+          transform: translateY(20px);  
+        }  
+        to {  
+          opacity: 1;  
+          transform: translateY(0);  
+        }  
+      }  
+
+      @keyframes slideIn {  
+        from {  
+          opacity: 0;  
+          transform: translateX(-100%);  
+        }  
+        to {  
+          opacity: 1;  
+          transform: translateX(0);  
+        }  
+      }  
+
+      /* Animated Sections - Default Styles */  
+      .animated-section {  
+        animation: fadeInUp 1s ease-out both;  
+        font-weight: bold;  
+      }  
+      .animated-section h2 {  
+        font-family: 'Pacifico', cursive;  
+        font-size: 2.8em;  
+        margin-bottom: 20px;  
+        text-shadow: 2px 2px 4px rgba(0,0,0,0.3);  
+        color: #000; /* Default heading color */  
+      }  
+      /* All paragraphs inside animated sections will be orange and animate individually */  
+      .animated-section p {  
+        font-size: 1.1em;  
+        margin-bottom: 20px;  
+        color: #FF6600; /* Orange text */  
+        animation: fadeInUp 1s ease-out both;  
+      }  
+
+      /* Specific Overrides */  
+      /* Quality Assurance and Our Vision & Mission:  
+         Headings (h2) should be orange while paragraphs are black */  
+      #quality h2,  
+      #vision-mission h2 {  
+        color: #FF6600;  
+      }  
+      #quality p,  
+      #vision-mission p {  
+        color: #000;  
+      }  
+
+      /* CTA Button - now orange with white text */  
+      .cta-button {  
+        display: inline-block;  
+        margin-top: 20px;  
+        padding: 10px 20px;  
+        background-color: #FF6600; /* Orange */  
+        color: #fff;  
+        border-radius: 5px;  
+        transition: background-color 0.3s ease;  
+      }  
+      .cta-button:hover {  
+        background-color: #e65c00; /* Slightly darker orange */  
+      }  
+
+      /* Sections */  
+      section {  
+        padding: 60px 20px;  
+        text-align: center;  
+        background-color: #fff;  
+      }  
+      .container {  
+        max-width: 1200px;  
+        margin: 0 auto;  
+        padding: 0 20px;  
+      }  
+
+      /* Services Section */  
+      #services ul {  
+        list-style: none;  
+        display: flex;  
+        flex-wrap: wrap;  
+        justify-content: center;  
+        margin-top: 40px;  
+      }  
+      #services li {  
+        background-color: #f8f8f8;  
+        border: 2px solid #FF6600; /* Orange border */  
+        border-radius: 10px;  
+        padding: 15px 20px;  
+        margin: 10px;  
+        box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);  
+        /* Initial state for slide-in effect */  
+        opacity: 0;  
+        transform: translateX(-100%);  
+        transition: transform 0.5s ease, opacity 0.5s ease, background-color 0.2s ease, color 0.2s ease;  
+      }  
+      /* When in view, slide the boxes in */  
+      #services li.slide-visible {  
+        opacity: 1;  
+        transform: translateX(0);  
+      }  
+      /* Hover effect (combining slide state with a slight upward shift) */  
+      #services li.slide-visible:hover {  
+        transform: translateX(0) translateY(-5px);  
+        background-color: #FF6600;  
+        color: #fff;  
+        border-color: #FF6600;  
+      }  
+
+      /* Promo Video Section */  
+      #promo-video video {  
+        width: 100%;  
+        max-width: 800px;  
+        border: 5px solid #D4AF37; /* Gold */  
+        border-radius: 10px;  
+      }  
+
+      /* Footer */  
+      footer {  
+        background-color: #000; /* Black */  
+        color: #fff;  
+        padding: 20px 0;  
+        text-align: center;  
+      }  
+
+      /* Responsive Design */  
+      @media (max-width: 768px) {  
+        #hero {  
+          height: 400px;  
+        }  
+        .slide-caption {  
+          font-size: 1.5em;  
+          padding: 15px 30px;  
+        }  
+        .animated-section h2 {  
+          font-size: 2em;  
+        }  
+        #services li {  
+          width: calc(50% - 20px);  
+        }  
+      }  
+      @media (max-width: 480px) {  
+        #services li {  
+          width: 100%;  
+          margin: 10px 0;  
+        }  
       }
-      body {
-        font-family: 'Poppins', sans-serif;
-        background-color: #fff;
-        color: #000;
-        line-height: 1.6;
-      }
-      a {
-        text-decoration: none;
-        color: #FF6600; /* Orange */
-      }
-      
-      /* Header */
-      header {
-        background-color: #000; /* Black */
-        padding: 20px 0;
-        text-align: center;
-        position: relative;
-      }
-      .header-content {
-        max-width: 1200px;
-        margin: 0 auto;
-        padding: 0 20px;
-        position: relative;
-        z-index: 1;
-      }
-      header img {
-        width: 200px;
-        filter: brightness(1.2);
-      }
-      .tagline {
-        color: #D4AF37; /* Gold */
-        font-size: 1.4em;
-        margin-top: 10px;
-        font-family: 'Pacifico', cursive;
-      }
-      
-      /* Hero Section */
-      #hero {
-        position: relative;
-        overflow: hidden;
-        height: 600px;
-      }
-      .slideshow-container {
-        width: 100%;
-        height: 100%;
-        position: relative;
-      }
-      .slide {
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        opacity: 0;
-        transition: opacity 1s ease-in-out;
-      }
-      .slide.active {
-        opacity: 1;
-      }
-      .slide img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-      }
-      .slide-caption {
-        position: absolute;
-        bottom: 40px;
-        left: 50%;
-        transform: translateX(-50%);
-        background: rgba(0, 0, 0, 0.6);
-        padding: 20px 40px;
-        border-radius: 50px;
-        font-family: 'Pacifico', cursive;
-        font-size: 2em;
-        color: #D4AF37; /* Gold */
-        text-shadow: 1px 1px 4px rgba(0,0,0,0.7);
-      }
-      
-      /* Animations */
-      @keyframes fadeInUp {
-        from {
-          opacity: 0;
-          transform: translateY(20px);
-        }
-        to {
-          opacity: 1;
-          transform: translateY(0);
-        }
-      }
-      
-      @keyframes slideIn {
-        from {
-          opacity: 0;
-          transform: translateX(-100%);
-        }
-        to {
-          opacity: 1;
-          transform: translateX(0);
-        }
-      }
-      
-      /* Animated Sections - Default Styles */
-      .animated-section {
-        animation: fadeInUp 1s ease-out both;
-        font-weight: bold;
-      }
-      .animated-section h2 {
-        font-family: 'Pacifico', cursive;
-        font-size: 2.8em;
-        margin-bottom: 20px;
-        text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
-        color: #000; /* Default heading color */
-      }
-      /* All paragraphs inside animated sections will be orange and animate individually */
-      .animated-section p {
-        font-size: 1.1em;
-        margin-bottom: 20px;
-        color: #FF6600; /* Orange text */
-        animation: fadeInUp 1s ease-out both;
-      }
-      
-      /* Specific Overrides */
-      /* Quality Assurance and Our Vision & Mission:
-         Headings (h2) should be orange while paragraphs are black */
-      #quality h2,
-      #vision-mission h2 {
-        color: #FF6600;
-      }
-      #quality p,
-      #vision-mission p {
-        color: #000;
-      }
-      
-      /* CTA Button - now orange with white text */
-      .cta-button {
-        display: inline-block;
-        margin-top: 20px;
-        padding: 10px 20px;
-        background-color: #FF6600; /* Orange */
-        color: #fff;
-        border-radius: 5px;
-        transition: background-color 0.3s ease;
-      }
-      .cta-button:hover {
-        background-color: #e65c00; /* Slightly darker orange */
-      }
-      
-      /* Sections */
-      section {
-        padding: 60px 20px;
-        text-align: center;
-        background-color: #fff;
-      }
-      .container {
-        max-width: 1200px;
-        margin: 0 auto;
-        padding: 0 20px;
-      }
-      
-      /* Services Section */
-      #services ul {
-        list-style: none;
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        margin-top: 40px;
-      }
-      #services li {
-        background-color: #f8f8f8;
-        border: 2px solid #FF6600; /* Orange border */
-        border-radius: 10px;
-        padding: 15px 20px;
-        margin: 10px;
-        box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
-        /* Initial state for slide-in effect */
-        opacity: 0;
-        transform: translateX(-100%);
-        transition: transform 0.5s ease, opacity 0.5s ease, background-color 0.2s ease, color 0.2s ease;
-      }
-      /* When in view, slide the boxes in */
-      #services li.slide-visible {
-        opacity: 1;
-        transform: translateX(0);
-      }
-      /* Hover effect (combining slide state with a slight upward shift) */
-      #services li.slide-visible:hover {
-        transform: translateX(0) translateY(-5px);
-        background-color: #FF6600;
-        color: #fff;
-        border-color: #FF6600;
-      }
-      
-      /* Promo Video Section */
-      #promo-video video {
-        width: 100%;
-        max-width: 800px;
-        border: 5px solid #D4AF37; /* Gold */
-        border-radius: 10px;
-      }
-      
-      /* Footer */
-      footer {
-        background-color: #000; /* Black */
-        color: #fff;
-        padding: 20px 0;
-        text-align: center;
-      }
-      
-      /* Responsive Design */
-      @media (max-width: 768px) {
-        #hero {
-          height: 400px;
-        }
-        .slide-caption {
-          font-size: 1.5em;
-          padding: 15px 30px;
-        }
-        .animated-section h2 {
-          font-size: 2em;
-        }
-        #services li {
-          width: calc(50% - 20px);
-        }
-      }
-      @media (max-width: 480px) {
-        #services li {
-          width: 100%;
-          margin: 10px 0;
-        }
-      }
+
+      /* About Us Overrides:  
+         In the About Us section, make the heading orange and paragraphs black */
+      #profile h2 {  
+        color: #FF6600;  
+      }  
+      #profile p {  
+        color: #000;  
+      }  
     </style>
-  </head>
-  <body>
-    <header>
-      <div class="header-content">
-        <img src="https://i.postimg.cc/sgXHZbfy/IMAGE-GENIUS-LOGO-black-pdf-20250216-162653-0000.png" alt="Image Genius Logo">
-        <div class="tagline">Your One-Stop Branding &amp; Advertising Solution</div>
-      </div>
-    </header>
-    
-    <section id="hero">
-      <div class="slideshow-container">
-        <div class="slide active">
-          <img src="https://i.postimg.cc/qv1r7k5G/6896ea581cdaedf774c8c861cf46c314.jpg" alt="Graphic Design">
-          <div class="slide-caption">Graphic Design Excellence</div>
-        </div>
-        <div class="slide">
-          <img src="https://i.postimg.cc/cC0kY3Kt/6ddadc078f55392048c2678747023fe3.jpg" alt="Promotional Items">
-          <div class="slide-caption">Boost Your Brand Identity</div>
-        </div>
-        <div class="slide">
-          <img src="https://i.postimg.cc/jjj7WSdq/branding-mockup.jpg" alt="Branding Services">
-          <div class="slide-caption">Innovative Branding Solutions</div>
-        </div>
-      </div>
-    </section>
-    
-    <!-- About Us Section -->
-    <section id="profile">
-      <div class="container animated-section">
-        <h2>About Us</h2>
-        <p><strong>Background:</strong> Image Genius was founded to deliver innovative print and advertising solutions that empower businesses to showcase their unique brand identity.</p>
-        <p><strong>Industry:</strong> We specialize in printing, signage, promotional items, and comprehensive branding services.</p>
-        <p><strong>Location:</strong> Nairobi County, GMC Plaza, Ground Floor, Opposite Fire Station, Room D10.</p>
-        <a href="#services" class="cta-button">Explore Our Services</a>
-      </div>
-    </section>
-    
-    <!-- Promo Video Section -->
-    <section id="promo-video">
-      <div class="container animated-section">
-        <h2>See Our Work in Action</h2>
-        <video controls>
-          <source src="https://ia903200.us.archive.org/26/items/vid-20250216-wa-0014/VID-20250216-WA0014.mp4" type="video/mp4">
-          Your browser does not support the video tag.
-        </video>
-      </div>
-    </section>
-    
-    <!-- Services Section -->
-    <section id="services">
-      <div class="container">
-        <h2 class="animated-section">Our Services</h2>
-        <ul>
-          <li>Branding &amp; Promotional Materials</li>
-          <li>Product Labels &amp; Stickers</li>
-          <li>Calendars &amp; Diaries</li>
-          <li>Banners</li>
-          <li>Publications</li>
-          <li>Engraving</li>
-          <li>Brochures</li>
-          <li>Flyers</li>
-          <li>Posters</li>
-          <li>Business Cards</li>
-          <li>Signage (3D, Illuminated)</li>
-          <li>Invoice Books &amp; Folders</li>
-        </ul>
-        <a href="#contact" class="cta-button">Contact Us</a>
-      </div>
-    </section>
-    
-    <!-- Quality Assurance Section -->
-    <section id="quality">
-      <div class="container animated-section">
-        <h2>Quality Assurance</h2>
-        <p>We maintain stringent quality control to ensure every project reflects our commitment to excellence and distinctive design.</p>
-      </div>
-    </section>
-    
-    <!-- Vision & Mission Section -->
-    <section id="vision-mission">
-      <div class="container animated-section">
-        <img src="https://i.postimg.cc/ZnXC4Z4Z/e0293c2b193859b97d6b290a27d7c74f.jpg" alt="Mission and Vision" style="display: block; margin: 0 auto 20px; border-radius: 50%; width: 150px; height: 150px; object-fit: cover;">
-        <h2>Our Vision &amp; Mission</h2>
-        <p><strong>Vision:</strong> To be Africa's premier partner in innovative branding, combining artistry with strategic insight.</p>
-        <p><strong>Mission:</strong> To empower businesses with creative advertising solutions that make a lasting impact.</p>
-        <p><strong>Goal:</strong> To redefine branding standards and inspire excellence across the continent.</p>
-      </div>
-    </section>
-    
-    <footer>
-      <p>© 2024 Image Genius. All Rights Reserved.</p>
-    </footer>
-    
-    <script>
-      // Hero slideshow
-      let slideIndex = 0;
-      const slides = document.querySelectorAll('.slide');
-      function showSlides() {
-        slides.forEach(slide => slide.classList.remove('active'));
-        slideIndex = (slideIndex + 1) % slides.length;
-        slides[slideIndex].classList.add('active');
-        setTimeout(showSlides, 3000);
-      }
-      showSlides();
+  </head>  
+  <body>  
+    <header>  
+      <div class="header-content">  
+        <img src="https://i.postimg.cc/sgXHZbfy/IMAGE-GENIUS-LOGO-black-pdf-20250216-162653-0000.png" alt="Image Genius Logo">  
+        <div class="tagline">Your One-Stop Branding &amp; Advertising Solution</div>  
+      </div>  
+    </header>  
 
-      // Service boxes slide-in on scroll using IntersectionObserver
-      document.addEventListener('DOMContentLoaded', function() {
-        const serviceItems = document.querySelectorAll('#services li');
-        const observerOptions = {
-          threshold: 0.1  // Lowered threshold to trigger earlier
-        };
+    <section id="hero">  
+      <div class="slideshow-container">  
+        <div class="slide active">  
+          <img src="https://i.postimg.cc/qv1r7k5G/6896ea581cdaedf774c8c861cf46c314.jpg" alt="Graphic Design">  
+          <div class="slide-caption">Graphic Design Excellence</div>  
+        </div>  
+        <div class="slide">  
+          <img src="https://i.postimg.cc/cC0kY3Kt/6ddadc078f55392048c2678747023fe3.jpg" alt="Promotional Items">  
+          <div class="slide-caption">Boost Your Brand Identity</div>  
+        </div>  
+        <div class="slide">  
+          <img src="https://i.postimg.cc/jjj7WSdq/branding-mockup.jpg" alt="Branding Services">  
+          <div class="slide-caption">Innovative Branding Solutions</div>  
+        </div>  
+      </div>  
+    </section>  
 
-        const observer = new IntersectionObserver((entries, observer) => {
-          entries.forEach(entry => {
-            if(entry.isIntersecting) {
-              entry.target.classList.add('slide-visible');
-              observer.unobserve(entry.target);
-            }
-          });
-        }, observerOptions);
+    <!-- About Us Section -->  
+    <section id="profile">  
+      <div class="container animated-section">  
+        <h2>About Us</h2>  
+        <p><strong>Background:</strong> Image Genius was founded to deliver innovative print and advertising solutions that empower businesses to showcase their unique brand identity.</p>  
+        <p><strong>Industry:</strong> We specialize in printing, signage, promotional items, and comprehensive branding services.</p>  
+        <p><strong>Location:</strong> Nairobi County, GMC Plaza, Ground Floor, Opposite Fire Station, Room D10.</p>  
+        <a href="#services" class="cta-button">Explore Our Services</a>  
+      </div>  
+    </section>  
 
-        serviceItems.forEach(item => {
-          observer.observe(item);
-        });
-      });
+    <!-- Promo Video Section -->  
+    <section id="promo-video">  
+      <div class="container animated-section">  
+        <h2>See Our Work in Action</h2>  
+        <video controls>  
+          <source src="https://ia903200.us.archive.org/26/items/vid-20250216-wa-0014/VID-20250216-WA0014.mp4" type="video/mp4">  
+          Your browser does not support the video tag.  
+        </video>  
+      </div>  
+    </section>  
+
+    <!-- Services Section -->  
+    <section id="services">  
+      <div class="container">  
+        <h2 class="animated-section">Our Services</h2>  
+        <ul>  
+          <li>Branding &amp; Promotional Materials</li>  
+          <li>Product Labels &amp; Stickers</li>  
+          <li>Calendars &amp; Diaries</li>  
+          <li>Banners</li>  
+          <li>Publications</li>  
+          <li>Engraving</li>  
+          <li>Brochures</li>  
+          <li>Flyers</li>  
+          <li>Posters</li>  
+          <li>Business Cards</li>  
+          <li>Signage (3D, Illuminated)</li>  
+          <li>Invoice Books &amp; Folders</li>  
+        </ul>  
+        <a href="#contact" class="cta-button">Contact Us</a>  
+      </div>  
+    </section>  
+
+    <!-- Quality Assurance Section -->  
+    <section id="quality">  
+      <div class="container animated-section">  
+        <h2>Quality Assurance</h2>  
+        <p>We maintain stringent quality control to ensure every project reflects our commitment to excellence and distinctive design.</p>  
+      </div>  
+    </section>  
+
+    <!-- Vision & Mission Section -->  
+    <section id="vision-mission">  
+      <div class="container animated-section">  
+        <img src="https://i.postimg.cc/ZnXC4Z4Z/e0293c2b193859b97d6b290a27d7c74f.jpg" alt="Mission and Vision" style="display: block; margin: 0 auto 20px; border-radius: 50%; width: 150px; height: 150px; object-fit: cover;">  
+        <h2>Our Vision &amp; Mission</h2>  
+        <p><strong>Vision:</strong> To be Africa's premier partner in innovative branding, combining artistry with strategic insight.</p>  
+        <p><strong>Mission:</strong> To empower businesses with creative advertising solutions that make a lasting impact.</p>  
+        <p><strong>Goal:</strong> To redefine branding standards and inspire excellence across the continent.</p>  
+      </div>  
+    </section>  
+
+    <footer>  
+      <p>© 2024 Image Genius. All Rights Reserved.</p>  
+    </footer>  
+
+    <script>  
+      // Hero slideshow  
+      let slideIndex = 0;  
+      const slides = document.querySelectorAll('.slide');  
+      function showSlides() {  
+        slides.forEach(slide => slide.classList.remove('active'));  
+        slideIndex = (slideIndex + 1) % slides.length;  
+        slides[slideIndex].classList.add('active');  
+        setTimeout(showSlides, 3000);  
+      }  
+      showSlides();  
+
+      // Service boxes slide-in on scroll using IntersectionObserver  
+      document.addEventListener('DOMContentLoaded', function() {  
+        const serviceItems = document.querySelectorAll('#services li');  
+        const observerOptions = {  
+          threshold: 0.1  // Lowered threshold to trigger earlier  
+        };  
+
+        const observer = new IntersectionObserver((entries, observer) => {  
+          entries.forEach(entry => {  
+            if(entry.isIntersecting) {  
+              entry.target.classList.add('slide-visible');  
+              observer.unobserve(entry.target);  
+            }  
+          });  
+        }, observerOptions);  
+
+        serviceItems.forEach(item => {  
+          observer.observe(item);  
+        });  
+      });  
     </script>
-  </body>
-</html>
+  </body>  
+</html>" 
+
 
 
