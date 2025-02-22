@@ -139,7 +139,7 @@
       animation: fadeIn 1s ease-out forwards;
     }
     
-    /* Testimonials Slideshow Section */
+    /* Testimonials Slideshow Section for Client Testimonials */
     .testimonials-wrapper {
       overflow: hidden;
       padding: 20px;
@@ -177,6 +177,50 @@
     @keyframes scrollTestimonials {
       0% { transform: translateX(0); }
       100% { transform: translateX(-50%); }
+    }
+    
+    /* Designer Testimonials Section */
+    .designer-testimonials {
+      padding: 20px;
+      text-align: center;
+    }
+    .designer-testimonials h2 {
+      font-size: 1.2rem;
+      margin-bottom: 10px;
+    }
+    .designer-wrapper {
+      overflow: hidden;
+      padding: 20px 0;
+    }
+    .designer-inner {
+      display: flex;
+      gap: 10px;
+      justify-content: center;
+      animation: scrollTestimonials 20s linear infinite;
+    }
+    .designer-box {
+      background-color: gold;
+      color: black;
+      padding: 10px;
+      text-align: center;
+      font-size: 0.7rem;
+      font-weight: bold;
+      width: 180px;
+      height: 180px;
+      flex: 0 0 auto;
+      border-radius: 10px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+    .designer-box p {
+      font-style: italic;
+      margin-top: 5px;
+    }
+    .designer-name {
+      font-weight: bold;
+      margin-top: 5px;
     }
     
     /* Footer (Contact Us Section) */
@@ -289,7 +333,8 @@
       .subheading {
         font-size: 1rem;
       }
-      .testimonial-box {
+      .testimonial-box,
+      .designer-box {
         width: 150px;
         height: 150px;
         font-size: 0.6rem;
@@ -327,7 +372,7 @@
     </div>
   </div>
   
-  <!-- Testimonials Section as Slideshow -->
+  <!-- Client Testimonials Section as Slideshow -->
   <div class="testimonials-wrapper fade-in">
     <div class="testimonials-inner">
       <div class="testimonial-box">
@@ -340,7 +385,7 @@
       </div>
       <div class="testimonial-box">
         <p>"Their professionalism and attention to detail made our project a success."</p>
-        <div class="testimonial-name">DENIS WAFULA</div>
+        <div class="testimonial-name">DENIS NJUGUNA</div>
       </div>
       <div class="testimonial-box">
         <p>"Innovative designs that set us apart in the market."</p>
@@ -361,7 +406,7 @@
       </div>
       <div class="testimonial-box">
         <p>"Their professionalism and attention to detail made our project a success."</p>
-        <div class="testimonial-name">DENIS WAFULA</div>
+        <div class="testimonial-name">DENIS NJUGUNA</div>
       </div>
       <div class="testimonial-box">
         <p>"Innovative designs that set us apart in the market."</p>
@@ -374,12 +419,41 @@
     </div>
   </div>
   
+  <!-- Designer Testimonials Section -->
+  <div class="designer-testimonials fade-in">
+    <h2>Designer Testimonials</h2>
+    <div class="designer-wrapper">
+      <div class="designer-inner">
+        <div class="designer-box">
+          <p>"I’ve worked with many platforms, but Genius Designers has been one of the most rewarding. The clients are serious about their work, and the process is transparent."</p>
+          <div class="designer-name">WANJIKU MWANGI</div>
+        </div>
+        <div class="designer-box">
+          <p>"Genius Designers has allowed me to work on exciting projects with clients who truly value design. The collaboration process is smooth and inspiring."</p>
+          <div class="designer-name">KAMAU NJOROGE</div>
+        </div>
+        <div class="designer-box">
+          <p>"I’ve collaborated on multiple projects and love the flexibility the platform offers. It connects me with clients who understand good design."</p>
+          <div class="designer-name">AKINYI WAMBUI</div>
+        </div>
+        <div class="designer-box">
+          <p>"Being part of Genius Designers has been incredibly rewarding. The platform ensures both clients and designers are on the same page."</p>
+          <div class="designer-name">OTIENO ODHIAMBO</div>
+        </div>
+        <div class="designer-box">
+          <p>"The process is straightforward and supportive. I get to work on high-caliber projects and receive prompt payment upon client approval."</p>
+          <div class="designer-name">JUMA MUTUA</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
   <!-- Footer (Contact Us Section) -->
   <div id="contact" class="footer fade-in">
     <div class="footer-content">
       <div class="footer-box">
         <h3>WhatsApp</h3>
-        <p><a href="https://wa.me/254740165373" target="_blank" style="color: white; text-decoration: none;">0740165373</a></p>
+        <button onclick="window.open('https://wa.me/254740165373','_blank')" style="background-color: green; color: white; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer;">WhatsApp us</button>
       </div>
       <div class="footer-box">
         <h3>Emails</h3>
@@ -435,28 +509,3 @@
   </div>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-      
