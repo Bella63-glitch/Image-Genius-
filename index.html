@@ -30,7 +30,7 @@
       padding: 4px 8px;
       margin: 0 5px;
       text-decoration: none;
-      font-size: 10px; /* really small text */
+      font-size: 10px;
       border-radius: 3px;
       transition: background-color 0.3s ease;
     }
@@ -80,7 +80,6 @@
     .fade-in {
       animation: fadeIn 1s ease-out forwards;
     }
-    
     /* Logo Section */
     .logo-container {
       background-image: url('https://i.postimg.cc/D0JY6Dbb/IMG-20250219-WA0009-1.jpg');
@@ -92,7 +91,6 @@
       position: relative;
       height: 300px;
     }
-    
     /* Updated Subheading */
     .subheading {
       background-color: #FFD700;
@@ -108,7 +106,24 @@
       max-width: 90%;
       animation: fadeIn 1s ease-out forwards, moveText 3s ease-in-out infinite;
     }
-    
+    /* About Us Section with Black Background */
+    .about-us-section {
+      background-color: black;
+      color: white;
+      text-align: center;
+      font-size: 0.6rem; /* really small paragraph font */
+      padding: 10px;
+      border-radius: 8px;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.7);
+      margin: 20px auto;
+      max-width: 90%;
+    }
+    .about-us-heading {
+      font-size: 1rem;
+      margin-bottom: 5px;
+      color: white;
+      font-weight: normal;
+    }
     /* Poster & Video Section */
     .poster-section {
       display: flex;
@@ -128,7 +143,6 @@
       height: 100%;
       object-fit: cover;
       display: block;
-      /* Slide in the poster image from the left */
       animation: slideInLeft 1s ease-out forwards;
     }
     .video-container video {
@@ -138,7 +152,6 @@
       display: block;
       animation: fadeIn 1s ease-out forwards;
     }
-    
     /* Testimonials Slideshow Section for Client Testimonials */
     .testimonials-wrapper {
       overflow: hidden;
@@ -178,7 +191,6 @@
       0% { transform: translateX(0); }
       100% { transform: translateX(-50%); }
     }
-    
     /* Designer Testimonials Section */
     .designer-testimonials {
       padding: 20px;
@@ -222,7 +234,6 @@
       font-weight: bold;
       margin-top: 5px;
     }
-    
     /* Footer (Contact Us Section) */
     .footer {
       background: url('https://i.postimg.cc/T19WQp0H/078f1e4068e13b89a42162e02cb7a443.jpg');
@@ -260,8 +271,7 @@
       font-size: 1.3rem;
       text-decoration: none;
     }
-    
-    /* Extra Footer Section (About Us Section) */
+    /* Extra Footer Section */
     .extra-footer {
       background-image: url('https://i.postimg.cc/cLhjnS3x/a8fed86f8fbf66e9cab318bd4df345ce.jpg');
       background-size: cover;
@@ -308,7 +318,6 @@
       background-color: #FFD700;
       transform: scale(1.05);
     }
-    
     @media (max-width: 768px) {
       .poster-section {
         flex-direction: column;
@@ -325,7 +334,6 @@
         text-align: center;
       }
     }
-    
     @media (max-width: 480px) {
       .logo-container {
         height: 150px;
@@ -350,15 +358,17 @@
     <a href="https://chat.whatsapp.com/DJf2Q1V4L7k6AWdRkHl0Tq">Jobs</a>
     <a href="#contact">Contact Us</a>
   </nav>
-  
   <!-- LOGO Section -->
   <div class="logo-container slide-in"></div>
-  
   <!-- Remote Designers Heading -->
   <div class="subheading fade-in">
     Remote Graphic & Web Designers ready to work for you
   </div>
-  
+  <!-- New About Us Section -->
+  <div class="about-us-section fade-in">
+    <h2 class="about-us-heading">About Us</h2>
+    <p>GENIUS DESIGNERS aims to bridge the gap between clients and designers by establishing a transparent, structured platform that fosters clear communication and mutual understanding. By implementing clear contract terms, milestone payments, and a collaborative project management system, GENIUS DESIGNERS ensures both parties are aligned at every stage of the design process. This approach reduces the risk of payment misunderstandings, enhances transparency, and builds long-lasting trust within the creative industry. With a focus on professionalism and accountability, GENIUS DESIGNERS is committed to delivering value and protecting the interests of both clients and designers alike.</p>
+  </div>
   <!-- Poster & Video Section -->
   <div class="poster-section fade-in">
     <div class="poster-container">
@@ -371,7 +381,6 @@
       </video>
     </div>
   </div>
-  
   <!-- Client Testimonials Section as Slideshow -->
   <div class="testimonials-wrapper fade-in">
     <div class="testimonials-inner">
@@ -392,11 +401,6 @@
         <div class="testimonial-name">MICHAEL MWENDE</div>
       </div>
       <div class="testimonial-box">
-        <p>"Exceptional service and high-quality work exceeded our expectations."</p>
-        <div class="testimonial-name">SAMUEL NKUNGU</div>
-      </div>
-      <!-- Duplicate testimonials for seamless looping -->
-      <div class="testimonial-box">
         <p>"The designers understood our vision and delivered beyond expectations. Highly recommend!"</p>
         <div class="testimonial-name">JOSEPH KIVUVA</div>
       </div>
@@ -412,13 +416,8 @@
         <p>"Innovative designs that set us apart in the market."</p>
         <div class="testimonial-name">MICHAEL MWENDE</div>
       </div>
-      <div class="testimonial-box">
-        <p>"Exceptional service and high-quality work exceeded our expectations."</p>
-        <div class="testimonial-name">SAMUEL NKUNGU</div>
-      </div>
     </div>
   </div>
-  
   <!-- Designer Testimonials Section -->
   <div class="designer-testimonials fade-in">
     <h2>Designer Testimonials</h2>
@@ -447,7 +446,6 @@
       </div>
     </div>
   </div>
-  
   <!-- Footer (Contact Us Section) -->
   <div id="contact" class="footer fade-in">
     <div class="footer-content">
@@ -473,14 +471,9 @@
       Copyright © 2024 Cloud9 Technologies. All rights reserved.
     </p>
   </div>
-  
-  <!-- Extra Footer Section (About Us Section) -->
+  <!-- Extra Footer Section -->
   <div class="extra-footer fade-in">
     <div class="footer-container">
-      <div id="about" class="footer-column">
-        <h4>About Us</h4>
-        <p>We connect clients with top-tier designers, ensuring professionalism and quality in every project.</p>
-      </div>
       <div class="footer-column">
         <h4>Product & Services</h4>
         <ul>
@@ -508,4 +501,28 @@
     </div>
   </div>
 </body>
-</html>
+</html/>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
